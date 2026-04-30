@@ -71,7 +71,7 @@ NUMERIC_COLS = [
 
 @st.cache_data
 def load_data():
-    base_dir = os.path.join(os.path.dirname(__file__), "cot_raw")
+    base_dir = os.path.join(os.path.dirname(__file__), "data")
     if not os.path.exists(base_dir):
         st.error(f"Data directory not found at {base_dir}. Please run cto.py first.")
         return pd.DataFrame()
@@ -86,7 +86,7 @@ def load_data():
                 st.warning(f"Failed to read {fp}: {e}")
 
     if not dfs:
-        st.error("No yearly data files found in cot_raw.")
+        st.error("No yearly data files found in data.")
         return pd.DataFrame()
 
     df = pd.concat(dfs, ignore_index=True)

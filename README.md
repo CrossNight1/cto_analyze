@@ -9,8 +9,8 @@ A Streamlit + Plotly dashboard for analyzing **CFTC Commitment of Traders (COT) 
 ```
 cto_analyze/
 ├── app.py          # Streamlit dashboard application
-├── cto.py          # Data download script (CFTC → cot_raw/)
-├── cot_raw/        # Downloaded yearly CSVs (cot_2010.csv … cot_2026.csv)
+├── data/           # Downloaded yearly CSVs (cot_2010.csv … cot_2026.csv)
+├── cto.py          # Data download script (CFTC → data/)
 └── README.md       # This file
 ```
 
@@ -25,7 +25,7 @@ cd /Users/leoinv/Documents/CODE
 ../.venv/bin/python cto_analyze/cto.py
 ```
 
-This downloads yearly ZIP files from CFTC for 2010–2026 and saves them as individual CSVs in `cto_analyze/cot_raw/`. Each file is self-contained and format-compatible.
+This downloads yearly ZIP files from CFTC for 2010–2026 and saves them as individual CSVs in `cto_analyze/data/`. Each file is self-contained and format-compatible.
 
 > **Re-run any time** to refresh data. The script will overwrite the yearly files with the latest weekly data.
 
